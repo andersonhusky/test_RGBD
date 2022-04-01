@@ -12,10 +12,16 @@ class ImageGrabber{
 public:
     ImageGrabber(){}
 
-    void GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB, const sensor_msgs::ImageConstPtr& msgD);
+    void GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB, const sensor_msgs::ImageConstPtr& msgD, float reg_maxdist);
 
     cv::Mat RegionGrowing(const cv::Mat &im, int &x, int &y, const float &reg_maxdist);
-    cv::Mat RegionGrowing_c(const cv::Mat &im, int &x, int &y, const float &reg_maxdist);
+
+    struct compare{
+        template<typename T, typename U>
+        bool operator()(T const& left, U const& right){
+            return left.first > right.first;
+        }
+    };
 };
 
 void toGray(cv::Mat& img, bool mbRGB){
@@ -34,6 +40,9 @@ void toGray(cv::Mat& img, bool mbRGB){
 }
 
 int main(int argc, char** argv){
+    int reg_maxdist;
+    cout << "please input a delta depth threshold: " << endl;
+    cin >> reg_maxdist;
     ros::init(argc, argv, "RGBD");
     ros::start();
 
@@ -46,13 +55,13 @@ int main(int argc, char** argv){
     typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::Image, sensor_msgs::Image>
         syncPolice;
     message_filters::Synchronizer<syncPolice> sync(syncPolice(10), rgbImg, depthImg);
-    sync.registerCallback(boost::bind(&ImageGrabber::GrabRGBD, &igb, _1, _2));
+    sync.registerCallback(boost::bind(&ImageGrabber::GrabRGBD, &igb, _1, _2, reg_maxdist));
 
     ros::spin();
     return 0;
 }
 
-void ImageGrabber::GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB, const sensor_msgs::ImageConstPtr& msgD){
+void ImageGrabber::GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB, const sensor_msgs::ImageConstPtr& msgD, float reg_maxdist){
     cv_bridge::CvImageConstPtr cvPtrRGB;
     try
     {
@@ -76,105 +85,26 @@ void ImageGrabber::GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB, const sens
     }
 
     int x=320, y=240;
-    float reg_maxdist=20;
     cv::Mat stored;
     cvPtrD->image.convertTo(stored, CV_8U);
     cv::imshow("Depth", stored);
     cv::waitKey(10);
     cv::Mat J = RegionGrowing(cvPtrD->image, x, y, reg_maxdist);
-    cout << J.size() << endl;
+    int dilation_size = 5;
+    cv::Mat kernel = getStructuringElement(cv::MORPH_ELLIPSE,
+                                            cv::Size( 2*dilation_size + 1, 2*dilation_size+1 ),
+                                            cv::Point( dilation_size, dilation_size ) );
+    cv::dilate(J, J, kernel);
+    
     cv::Mat img = cvPtrRGB->image;
     toGray(img, false);
+    img = img&J;
     cv::imshow("img", img);
     cv::waitKey(10);
+    cout << J.size() << endl;
 }
 
-cv::Mat ImageGrabber::RegionGrowing_c(const cv::Mat &im, int &x, int &y, const float &reg_maxdist){
-    cv::Mat J = cv::Mat::zeros(im.size(), CV_32F);
-
-    float reg_mean = im.at<float>(y, x);
-    int reg_size = 1;
-
-    int _neg_free = 10000;
-    int neg_free = 10000;
-    int neg_pos = -1;
-    cv::Mat neg_list = cv::Mat::zeros(neg_free, 3, CV_32F);
-
-    double pixdist=0;
-
-    cv::Mat neigb(4, 2, CV_32F);
-
-    neigb.at<float>(0,0) = -1;
-    neigb.at<float>(0,1) = 0;
-    neigb.at<float>(1,0) = 1;
-    neigb.at<float>(1,1) = 0;
-    neigb.at<float>(2,0) = 0;
-    neigb.at<float>(2,1) = -1;
-    neigb.at<float>(3,0) = 0;
-    neigb.at<float>(3,1) = 1;
-
-    while(pixdist < reg_maxdist && reg_size<im.total())
-    {
-        for(int j=0; j<4; j++)
-        {
-            int xn = x+neigb.at<float>(j, 0);
-            int yn = y+neigb.at<float>(j, 1);
-            bool ins=((xn >= 0) && (yn >= 0) && (xn < im.cols) && (yn < im.rows));
-
-            if(ins && (J.at<float>(yn, xn)==0.) )
-            {
-                neg_pos++;
-                neg_list.at<float>(neg_pos, 0) = xn;
-                neg_list.at<float>(neg_pos, 1) = yn;
-                neg_list.at<float>(neg_pos, 2) = im.at<float>(yn, xn);
-                J.at<float>(yn, xn)=1;
-            }
-        }
-
-        if((neg_pos+10) > neg_free){
-            cout << "expand mat." << endl;
-            cv::Mat _neg_list = cv::Mat::zeros(_neg_free, 3, CV_32F);
-            neg_free += _neg_free;
-            cout << neg_list.size() << endl;
-            cv::vconcat(neg_list, _neg_list, neg_list);
-            cout << neg_list.size() << endl;
-        }
-
-        cv::Mat dist;
-        for(int i=0; i<neg_pos; i++)
-        {
-            double d = abs(neg_list.at<float>(i, 2) - reg_mean);
-            dist.push_back(d);
-        }
-
-        double max;
-        cv::Point ind, maxpos;
-        cv::minMaxLoc(dist, &pixdist, &max, &ind, &maxpos);
-        int index = ind.y;
-
-        if(index != -1){
-            J.at<float>(y,x) = -1;
-            reg_size += 1;
-
-            reg_mean = (reg_mean*reg_size +neg_list.at<float>(index, 2)/(reg_size+1));
-
-            x = neg_list.at<float>(index, 0);
-            y = neg_list.at<float>(index, 1);
-
-            neg_list.at<float>(index, 0) = neg_list.at<float>(neg_pos, 0);
-            neg_list.at<float>(index, 1) = neg_list.at<float>(neg_pos, 1);
-            neg_list.at<float>(index, 2) = neg_list.at<float>(neg_pos, 2);
-            neg_pos-=1;
-        }
-        else{
-            pixdist = reg_maxdist;
-        }
-    }
-
-    J = cv::abs(J);
-    return J;
-}
-
+// 注意cv::Mat的数据类型
 cv::Mat ImageGrabber::RegionGrowing(const cv::Mat &im, int &x, int &y, const float &reg_maxdist){
     cv::Mat J = cv::Mat::zeros(im.size(), CV_8U);
 
@@ -185,7 +115,7 @@ cv::Mat ImageGrabber::RegionGrowing(const cv::Mat &im, int &x, int &y, const flo
 
     int _neg_free = 10000;
     int neg_free = 10000;
-    int neg_pos = -1;
+    int neg_pos = 0;
     cv::Mat neg_list = cv::Mat::zeros(neg_free, 3, CV_16U);
 
     double pixdist=0;
@@ -201,48 +131,43 @@ cv::Mat ImageGrabber::RegionGrowing(const cv::Mat &im, int &x, int &y, const flo
     neigb.at<ushort>(3,0) = 0;
     neigb.at<ushort>(3,1) = 1;
 
-
+    priority_queue<pair<int, int>, vector<pair<int, int>>, compare> dist;
     while(pixdist < reg_maxdist && reg_size<im.total())
     {
+        int num=0;
         for(int j=0; j<4; j++)
         {
             ushort xn = x+neigb.at<ushort>(j, 0);
             ushort yn = y+neigb.at<ushort>(j, 1);
-            bool ins=((xn >= 0) && (yn >= 0) && (xn < im.cols) && (yn < im.rows));
+            bool ins=((xn >= 0) && (yn >= 0) && (xn < im.cols) && (yn < im.rows) && im.at<ushort>(yn, xn)>0);
 
             if(ins && (J.at<uchar>(yn, xn)==0) )
             {
-                cout << xn << ", " << yn << ", " << im.at<ushort>(yn, xn) << endl;
-                neg_pos++;
-                neg_list.at<ushort>(neg_pos, 0) = xn;
-                neg_list.at<ushort>(neg_pos, 1) = yn;
-                neg_list.at<ushort>(neg_pos, 2) = im.at<ushort>(yn, xn);
+                // cout << "xn: " << xn << ", yn: " << yn << ",  dist: " << im.at<ushort>(yn, xn) << endl;
+                neg_list.at<ushort>(neg_pos+num, 0) = xn;
+                neg_list.at<ushort>(neg_pos+num, 1) = yn;
+                neg_list.at<ushort>(neg_pos+num, 2) = im.at<ushort>(yn, xn);
                 J.at<uchar>(yn, xn)=255;
+                num++;
             }
         }
 
-        if((neg_pos+10) > neg_free){
-            cout << "expand mat." << endl;
+        if((neg_pos+num+10) > neg_free){
             cv::Mat _neg_list = cv::Mat::zeros(_neg_free, 3, CV_16U);
             neg_free += _neg_free;
-            cout << neg_list.size() << endl;
             cv::vconcat(neg_list, _neg_list, neg_list);
-            cout << neg_list.size() << endl;
         }
 
-        cv::Mat dist;
-        for(int i=0; i<neg_pos; i++)
+        for(int i=0; i<num; i++)
         {
-            int d = abs(neg_list.at<ushort>(i, 2) - reg_mean);
-            cout << neg_list.at<ushort>(i, 2) << ", " << reg_mean << endl;
-            cout << d << endl;
-            dist.push_back(d);
+            int d = abs(neg_list.at<ushort>(neg_pos+i, 2) - reg_mean);
+            // cout << "now dist: " << neg_list.at<ushort>(neg_pos+i, 2) << ", reg_mean: " << reg_mean << endl;
+            dist.push(make_pair(d, neg_pos+i));
         }
+        neg_pos += num;
 
-        double max;
-        cv::Point ind, maxpos;
-        cv::minMaxLoc(dist, &pixdist, &max, &ind, &maxpos);
-        int index = ind.y;
+        pixdist = dist.size()!=0? dist.top().first: reg_maxdist;
+        int index = dist.size()!=0? dist.top().second: -1;
 
         if(index != -1){
             reg_mean = (reg_mean*reg_size +neg_list.at<ushort>(index, 2))/(reg_size+1);
@@ -251,17 +176,8 @@ cv::Mat ImageGrabber::RegionGrowing(const cv::Mat &im, int &x, int &y, const flo
             x = neg_list.at<ushort>(index, 0);
             y = neg_list.at<ushort>(index, 1);
 
-            neg_list.at<ushort>(index, 0) = neg_list.at<ushort>(neg_pos, 0);
-            neg_list.at<ushort>(index, 1) = neg_list.at<ushort>(neg_pos, 1);
-            neg_list.at<ushort>(index, 2) = neg_list.at<ushort>(neg_pos, 2);
-            neg_pos-=1;
-        }
-        else{
-            pixdist = reg_maxdist;
+            dist.pop();
         }
     }
-    cv::imshow("J", J);
-    cv::waitKey(10);
-
     return J;
 }
