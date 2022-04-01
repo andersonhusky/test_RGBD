@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: test_RGBD
+Description: Description of test_RGBD
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy

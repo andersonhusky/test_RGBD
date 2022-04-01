@@ -1,0 +1,1051 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "devel/lib/test_RGBD/test_RGBD"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"link_directories",
+			"find_package",
+			"target_link_libraries",
+			"add_definitions",
+			"include",
+			"configure_shared_library_build_settings",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/OpenCVConfig.cmake",
+			"/opt/ros/melodic/share/rosconsole/cmake/rosconsole-extras.cmake",
+			"/opt/ros/melodic/share/rosconsole/cmake/rosconsoleConfig.cmake",
+			"/opt/ros/melodic/share/roscpp/cmake/roscppConfig.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/tools/libraries.cmake",
+			"/opt/ros/melodic/share/catkin/cmake/all.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 151,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"file" : 5,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 76,
+				"parent" : 7
+			},
+			{
+				"file" : 4,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 197,
+				"parent" : 9
+			},
+			{
+				"file" : 3,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 222,
+				"parent" : 11
+			},
+			{
+				"file" : 2,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 13
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 20,
+				"parent" : 7
+			},
+			{
+				"file" : 7,
+				"parent" : 15
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 174,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 6,
+				"line" : 18,
+				"parent" : 17
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 13
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 19,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "CERES_FOUND"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "ROSCONSOLE_BACKEND_LOG4CXX"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "ROS_BUILD_SHARED_LIBS=1"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "ROS_PACKAGE_NAME=\"test_RGBD\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 20,
+					"path" : "/opt/ros/melodic/include"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "/usr/local/include/opencv4"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudev/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/core/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudaarithm/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/flann/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/hdf/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/imgproc/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/intensity_transform/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/ml/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/phase_unwrapping/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/plot/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/quality/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/reg/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/surface_matching/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/alphamat/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudafilters/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudaimgproc/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudawarping/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/dnn/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/dnn_superres/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/features2d/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/freetype/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/fuzzy/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/hfs/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/img_hash/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/imgcodecs/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/line_descriptor/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/photo/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/saliency/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/text/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/videoio/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/xphoto/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/calib3d/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudacodec/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudafeatures2d/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudastereo/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cvv/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/datasets/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/highgui/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/mcc/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/objdetect/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/rapid/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/rgbd/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/shape/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/structured_light/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/ts/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/video/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/xfeatures2d/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/ximgproc/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/xobjdetect/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/aruco/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/bgsegm/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/bioinspired/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/ccalib/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudabgsegm/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudalegacy/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudaobjdetect/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/dnn_objdetect/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/dpm/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/face/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/gapi/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/optflow/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/sfm/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/modules/stitching/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/tracking/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/cudaoptflow/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/stereo/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/superres/include"
+				},
+				{
+					"backtrace" : 20,
+					"isSystem" : true,
+					"path" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/opencv_contrib-4.5.1/modules/videostab/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "test_RGBD::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-L/usr/local/cuda/lib64",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/usr/local/cuda/lib64:/usr/local/lib:/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib:/opt/ros/melodic/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_gapi.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_stitching.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_alphamat.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_aruco.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_bgsegm.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_bioinspired.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_ccalib.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudabgsegm.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudafeatures2d.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudaobjdetect.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudastereo.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cvv.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_dnn_objdetect.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_dnn_superres.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_dpm.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_face.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_freetype.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_fuzzy.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_hdf.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_hfs.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_img_hash.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_intensity_transform.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_line_descriptor.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_mcc.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_quality.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_rapid.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_reg.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_rgbd.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_saliency.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_sfm.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_stereo.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_structured_light.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_superres.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_surface_matching.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_tracking.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_videostab.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_xfeatures2d.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_xobjdetect.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_xphoto.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libcv_bridge.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/local/lib/libopencv_core.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/local/lib/libopencv_imgproc.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/local/lib/libopencv_imgcodecs.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/local/lib/libopencv_calib3d.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/local/lib/libopencv_highgui.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libmessage_filters.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libroscpp_serialization.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libxmlrpcpp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_log4cxx.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/librosconsole_backend_interface.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-llog4cxx",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_regex",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/librostime.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/opt/ros/melodic/lib/libcpp_common.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_thread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_chrono",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_date_time",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lboost_atomic",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_shape.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_highgui.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_datasets.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_plot.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_text.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_ml.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_phase_unwrapping.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudacodec.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_videoio.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudaoptflow.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudalegacy.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudawarping.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_optflow.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_ximgproc.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_video.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_dnn.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_imgcodecs.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_objdetect.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_calib3d.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_features2d.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_flann.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_photo.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudaimgproc.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudafilters.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_imgproc.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudaarithm.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_core.so.4.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/media/hongfeng/Storage/Code/ADynaSLAM/Thirdparty/opencv-4.5.1/build/lib/libopencv_cudev.so.4.5.1",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "test_RGBD",
+	"nameOnDisk" : "test_RGBD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/RGBD.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
